@@ -1,5 +1,8 @@
-curl -L -o wallpaper.jpg https://source.unsplash.com/daily
-#curl -L -o wallpaper.jpg https://source.unsplash.com/category/nature
+if [ ! -z "$1" ]; then
+	curl -L -o wallpaper.jpg https://source.unsplash.com/random?$1
+else
+	curl -L -o wallpaper.jpg https://source.unsplash.com/daily
+fi
 
 # reset of wallpaper
 echo "" > reset.txt
